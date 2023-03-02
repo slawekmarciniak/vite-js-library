@@ -1,0 +1,36 @@
+{
+  "name": "@gr/my-lib",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.umd.cjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/index.d.ts",
+
+  "exports": {
+    ".": {
+      "browser": {
+        "production": "./dist/main.mjs",
+        "development": "./dist/main.dev.cjs"
+      },
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "pathe": "^1.1.0",
+    "vite-plugin-dts": "^2.0.2"
+  }
+}
